@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+}
+
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+  background-color: var(--color-primary-300, #93c9ca);
+  color: var(--color-grey-500, #6f7b92);
+  font-family: 'Noto Sans', Roboto, sans-serif;
+
+  --color-primary-100: #e6f7f6;
+  --color-primary-300: #93c9ca;
+  --color-primary-500: #2d7f7f;
+  --color-primary-700: #174d4d;
+  --color-primary-900: #061a1a;
+
+  --color-secondary-100: #fdeeee;
+  --color-secondary-300: #f6a7a7;
+  --color-secondary-500: #e76b6b;
+  --color-secondary-700: #b93f3f;
+  --color-secondary-900: #4a1818;
+
+  --color-grey-100: #f3f5f8;
+  --color-grey-300: #cfd5dd;
+  --color-grey-500: #6f7b92;
+  --color-grey-700: #41485b;
+  --color-grey-900: #181c26;
+
+  --color-accent-100: #eef2fc;
+  --color-accent-300: #a1aaf6;
+  --color-accent-500: #5a63ee;
+  --color-accent-700: #3639a9;
+  --color-accent-900: #15154d;
+
+  --color-error-100: #c03939;
+  --color-error-500: #cf6b6b;
+  --color-error-900: #ffaaaa;
+
+  --color-warning-100: #704a1f;
+  --color-warning-500: #ff8000;
+  --color-warning-900: #ffca91;
+
+  --color-success-100: #3e9147;
+  --color-success-500: #40bf40;
+  --color-success-900: #b4eeb4;
+}

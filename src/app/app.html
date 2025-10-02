@@ -1,0 +1,23 @@
+<main class="main">
+  <div class="app-container">
+    <nav class="menu">
+      <button [class.active]="activeTab==='reminders'" (click)="activeTab='reminders'">
+        Reminders
+      </button>
+      <button [class.active]="activeTab==='settings'" (click)="activeTab='settings'">
+        Settings
+      </button>
+    </nav>
+
+    <main class="content">
+
+      <div *ngIf="activeTab==='reminders'">
+        <app-reminders></app-reminders>
+      </div>
+
+      <div *ngIf="activeTab==='settings'">
+        <app-settings></app-settings>
+      </div>
+    </main>
+  </div>
+</main>

@@ -1,0 +1,342 @@
+.reminder-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fdfd 100%);
+  border: 1px solid rgba(45, 127, 127, 0.15);
+  border-radius: 16px;
+  padding: 20px;
+  margin: 12px 0;
+  box-shadow:
+    0 4px 16px rgba(45, 127, 127, 0.08),
+    0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.reminder-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary-500, #2d7f7f) 0%,
+    var(--color-primary-400, #529e9e) 50%,
+    var(--color-primary-500, #2d7f7f) 100%
+  );
+  opacity: 0.8;
+}
+
+.reminder-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 24px rgba(45, 127, 127, 0.12),
+    0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.reminder-card.disabled {
+  opacity: 0.65;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.reminder-card.disabled::before {
+  background: #dee2e6;
+}
+
+.reminder-info {
+  margin-bottom: 16px;
+}
+
+.reminder-dnd-setting {
+  margin-bottom: 12px;
+}
+
+.reminder-name {
+  color: var(--color-primary-700, #174d4d);
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.reminder-header {
+  margin-bottom: 8px;
+}
+
+.reminder-name {
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+}
+
+.reminder-schedule {
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.reminder-status {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.reminder-next-trigger {
+  margin-bottom: 8px;
+}
+
+.next-trigger-label {
+  font-weight: 500;
+  color: #555;
+}
+
+.next-trigger-time {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.next-trigger-time.due-now {
+  color: #dc3545;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.reminder-dnd-setting {
+  margin-bottom: 8px;
+}
+
+.reminder-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Toggle Switch Styles */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.toggle-switch input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.3s;
+  border-radius: 24px;
+  z-index: 1;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-switch input:checked + .slider {
+  background-color: var(--color-primary-500);
+}
+
+.toggle-switch input:focus + .slider {
+  box-shadow: 0 0 1px var(--color-primary-500);
+}
+
+.toggle-switch input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.toggle-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  min-width: 60px;
+}
+
+/* Button Styles */
+.test-btn,
+.delete-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  width: 140px;
+}
+
+.test-btn {
+  background-color: var(--color-primary-500);
+  color: white;
+}
+
+.test-btn:hover {
+  background-color: #0056b3;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+@media (max-width: 600px) {
+  .reminder-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .toggle-container {
+    justify-content: space-between;
+  }
+}
+.reminder-card {
+  background: var(--color-grey-100, #f9f9f9);
+  border: 1px solid var(--color-grey-300, #ddd);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  transition:
+    opacity 0.3s ease,
+    transform 0.2s ease;
+}
+
+.reminder-card.disabled {
+  opacity: 0.6;
+}
+
+.reminder-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.reminder-header {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-primary-700, #174d4d);
+}
+
+.reminder-name {
+  font-weight: bold;
+}
+
+.reminder-schedule {
+  color: var(--color-grey-700, #41485b);
+  font-size: 0.95rem;
+}
+
+.reminder-status {
+  font-size: 0.85rem;
+  color: var(--color-grey-500, #6f7b92);
+}
+
+.reminder-next-trigger {
+  font-size: 0.95rem;
+}
+
+.next-trigger-label {
+  font-weight: 500;
+  color: var(--color-grey-700, #41485b);
+}
+
+.next-trigger-time {
+  font-weight: 600;
+  margin-left: 4px;
+}
+
+.next-trigger-time.due-now {
+  color: var(--color-alert-500, #bf4040);
+  font-weight: bold;
+}
+
+.reminder-dnd-setting {
+  margin-top: 6px;
+}
+
+.reminder-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-left: 20px;
+}
+
+.reminder-actions button {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.enable-btn {
+  background: var(--color-success-500, #40bf40);
+  color: white;
+}
+
+.disable-btn {
+  background: var(--color-grey-500, #6f7b92);
+  color: white;
+}
+
+.test-btn {
+  background: var(--color-accent-500, #5a63ee);
+  color: white;
+}
+
+.delete-btn {
+  background: var(--color-alert-500, #bf4040);
+  color: white;
+}
+
+.reminder-actions button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
