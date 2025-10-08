@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "well-being-app": {
+    "reminder-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -38,7 +38,7 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
+                  "maximumWarning": "6kB",
                   "maximumError": "8kB"
                 }
               ],
@@ -56,10 +56,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "well-being-app:build:production"
+              "buildTarget": "reminder-app:build:production"
             },
             "development": {
-              "buildTarget": "well-being-app:build:development"
+              "buildTarget": "reminder-app:build:development"
             }
           },
           "defaultConfiguration": "development"

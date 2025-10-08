@@ -8,22 +8,20 @@ import { ReminderService } from '../reminder.service';
   standalone: true,
   imports: [CommonModule, FormsModule],
   template: `
-    <h1>Settings</h1>
-
+  <div class="settings-container">
+    <h1 class="settings-title">Settings</h1>
     <div class="settings-section">
-      <h2>Notification Settings</h2>
-      
+      <h2 class="settings-subtitle">Notification Settings</h2>
       <div class="setting-item">
         <label>Test Alert:</label>
         <button (click)="reminderService.sendTestNotification()" class="test-btn">
-          Send Test Alert
+          Send test alert
         </button>
       </div>
     </div>
 
     <div class="settings-section">
-      <h2>Do Not Disturb Hours</h2>
-      
+      <h2 class="settings-subtitle">Do Not Disturb Hours</h2>
       <div class="setting-item">
         <label>
           <input 

@@ -9,7 +9,6 @@ import { Reminder } from '../interfaces';
   standalone: true,
   imports: [CommonModule, FormsModule],
   template: `
-    <!-- Success Alert -->
     <div class="alert alert-success" *ngIf="successMessage">
       <div class="alert-content">
         <span class="alert-text">{{ successMessage }}</span>
@@ -17,7 +16,6 @@ import { Reminder } from '../interfaces';
       </div>
     </div>
 
-    <!-- Error Alert -->
     <div class="alert alert-error" *ngIf="hasErrors()">
       <div class="alert-content">
         <div class="alert-text">
@@ -78,6 +76,7 @@ import { Reminder } from '../interfaces';
           [(ngModel)]="newReminder.intervalMinutes" 
           name="interval"
           min="1"
+          max="10080"
           placeholder="60"
           [disabled]="newReminder.scheduleType !== 'interval'"
           class="interval-input"
@@ -126,7 +125,7 @@ export class ReminderFormComponent {
     
     if (this.validateForm()) {
       this.reminderService.addReminder(this.newReminder as Omit<Reminder, 'id'>);
-      this.showSuccess(`✨ Reminder "${this.newReminder.name}" added successfully!`);
+      this.showSuccess(`Reminder "${this.newReminder.name}" added successfully!`);
       this.resetForm();
     }
   }
